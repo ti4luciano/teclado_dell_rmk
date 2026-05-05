@@ -1,11 +1,11 @@
 # Documentation: https://rmk.rs/docs/configuration.html
 [keyboard]
-name = "RMK Keyboard"
-product_name = "RMK Keyboard"
+name = "DELL Keyboard"
+product_name = "DELL Keyboard"
 vendor_id = 0x4c4b
 product_id = 0x4643
 manufacturer = "RMK"
-chip = "rp2040"
+chip = "stm32"
 
 [matrix]
 # Row and col pins are mandatory
