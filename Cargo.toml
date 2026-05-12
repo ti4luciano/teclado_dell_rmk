@@ -1,0 +1,9 @@
+[dependencies]
+# Mantenha suas dependências atuais e adicione/verifique estas:
+rmk = { version = "0.3", features = ["stm32f103c8"] }
+embassy-stm32 = { version = "0.1", features = ["stm32f103c8", "time-driver-any"] }
+
+# Estas são obrigatórias para resolver os erros de "undefined symbol"
+defmt = "0.3"
+defmt-rtt = "0.4"
+panic-probe = { version = "0.3", features = ["print-defmt"] }
