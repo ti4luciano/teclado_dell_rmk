@@ -1,35 +1,53 @@
-# Documentation: https://rmk.rs/docs/configuration.html
 [keyboard]
-name = "DELL Keyboard"
-product_name = "DELL Keyboard"
-vendor_id = 0x4c4b
-product_id = 0x4643
-manufacturer = "RMK"
-chip = "stm32f103re"
+name = "Luciano KB"
+product_name = "Luciano Custom Keyboard"
+vendor_id = 0xFEED
+product_id = 0x0001
+manufacturer = "Luciano"
 
 [matrix]
-# Row and col pins are mandatory
-row_pins = ["PIN_6", "PIN_7", "PIN_8", "PIN_9"]
-col_pins = ["PIN_19", "PIN_20", "PIN_21"]
-
-# RMK uses col2row as the default matrix diode direction, if you want to use a row2col matrix, add `row2col = true`
-# row2col = true
-
-[layout]
-rows = 4
-cols = 3
+# Listagem das 15 linhas conforme sua tabela
+rows = ["PA0", "PA1", "PA2", "PA4", "PA5", "PA6", "PA7", "PA8", "PA9", "PB0", "PB1", "PB10", "PB11", "PB12", "PB13", "PB14", "PB15"]
+# Listagem das 8 colunas conforme sua tabela
+cols = ["PA10", "PB3", "PB4", "PB5", "PB6", "PB7", "PB8", "PB9"]
 layers = 2
-keymap = [
-    [
-        ["A", "B", "C"],
-        ["Kc1", "Kc2", "Kc3"],
-        ["LCtrl", "MO(1)", "LShift"],
-        ["OSL(1)", "LT(2, Kc9)", "LM(1, LShift | LGui)"]
-    ],
-    [
-        ["_", "TT(1)", "TG(2)"],
-        ["_", "_", "_"],
-        ["_", "_", "_"],
-        ["_", "_", "_"]
-    ],
+layout = [
+    # Camada 0 (Base) - Mapeada conforme sua imagem
+    # PA0
+    ["Up", "Left", "None", "None", "None", "End", "Home", "None"],
+    # PA1
+    ["None", "Down", "None", "None", "None", "F11", "Delete", "None"],
+    # PA2
+    ["None", "Right", "None", "None", "None", "F12", "PrintScreen", "None"],
+    # PA4
+    ["None", "None", "Dot", "L", "O", "Key9", "F8", "F7"],
+    # PA5
+    ["Tilde", "Semicolon", "RightBrace", "Ccidilla", "P", "Key0", "Minus", "Grave"],
+    # PA6
+    ["F6", "Slash", "Comma", "K", "I", "Key8", "Equal", "LeftBrace"],
+    # PA7
+    ["H", "N", "M", "J", "U", "Key7", "Key6", "Y"],
+    # PA8
+    ["None", "None", "None", "PageDown", "PageUp", "LeftGui", "None", "None"],
+    # PA9
+    ["None", "None", "None", "MO(1)", "None", "None", "None", "ContextMenu"],
+    # PB0
+    ["F5", "Space", "Enter", "None", "None", "F10", "F9", "Backspace"],
+    # PB1
+    ["G", "B", "V", "F", "R", "Key4", "Key5", "T"],
+    # PB10
+    ["F4", "None", "C", "D", "E", "Key3", "F2", "F3"],
+    # PB11
+    ["Backslash", "None", "X", "S", "W", "Key2", "F1", "CapsLock"],
+    # PB12
+    ["Escape", "MediaMute", "Z", "A", "Q", "Key1", "Apostrophe", "Tab"],
+    # PB13
+    ["LeftAlt", "AltGr", "None", "None", "None", "Insert", "None", "None"],
+    # PB14
+    ["None", "None", "RightShift", "None", "None", "None", "None", "LeftShift"],
+    # PB15
+    ["None", "None", "None", "None", "None", "None", "LeftCtrl", "None"]
 ]
+
+[vial]
+enabled = true # Ativa o suporte ao Vial para configuração em tempo real
