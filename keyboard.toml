@@ -4,51 +4,75 @@ product_name = "Luciano Custom Keyboard"
 vendor_id = 0xFEED
 product_id = 0x0001
 manufacturer = "Luciano"
-chip = "stm32f103re"
+chip = "stm32f103c8" #
 
 [matrix]
-# Listagem das 15 linhas conforme sua tabela
-rows = ["PA0", "PA1", "PA2", "PA4", "PA5", "PA6", "PA7", "PA8", "PA9", "PB0", "PB1", "PB10", "PB11", "PB12", "PB13", "PB14", "PB15"]
-# Listagem das 8 colunas conforme sua tabela
-cols = ["PA10", "PB3", "PB4", "PB5", "PB6", "PB7", "PB8", "PB9"]
-layers = 2
-layout = [
-    # Camada 0 (Base) - Mapeada conforme sua imagem
-    # PA0
-    ["Up", "Left", "None", "None", "None", "End", "Home", "None"],
-    # PA1
-    ["None", "Down", "None", "None", "None", "F11", "Delete", "None"],
-    # PA2
-    ["None", "Right", "None", "None", "None", "F12", "PrintScreen", "None"],
-    # PA4
-    ["None", "None", "Dot", "L", "O", "Key9", "F8", "F7"],
-    # PA5
-    ["Tilde", "Semicolon", "RightBrace", "Ccidilla", "P", "Key0", "Minus", "Grave"],
-    # PA6
-    ["F6", "Slash", "Comma", "K", "I", "Key8", "Equal", "LeftBrace"],
-    # PA7
-    ["H", "N", "M", "J", "U", "Key7", "Key6", "Y"],
-    # PA8
-    ["None", "None", "None", "PageDown", "PageUp", "LeftGui", "None", "None"],
-    # PA9
-    ["None", "None", "None", "MO(1)", "None", "None", "None", "ContextMenu"],
-    # PB0
-    ["F5", "Space", "Enter", "None", "None", "F10", "F9", "Backspace"],
-    # PB1
-    ["G", "B", "V", "F", "R", "Key4", "Key5", "T"],
-    # PB10
-    ["F4", "None", "C", "D", "E", "Key3", "F2", "F3"],
-    # PB11
-    ["Backslash", "None", "X", "S", "W", "Key2", "F1", "CapsLock"],
-    # PB12
-    ["Escape", "MediaMute", "Z", "A", "Q", "Key1", "Apostrophe", "Tab"],
-    # PB13
-    ["LeftAlt", "AltGr", "None", "None", "None", "Insert", "None", "None"],
-    # PB14
-    ["None", "None", "RightShift", "None", "None", "None", "None", "LeftShift"],
-    # PB15
-    ["None", "None", "None", "None", "None", "None", "LeftCtrl", "None"]
-]
+# Pinos das 15 linhas conforme sua tabela
+row_pins = ["PA0", "PA1", "PA2", "PA4", "PA5", "PA6", "PA7", "PA8", "PA9", "PB0", "PB1", "PB10", "PB11", "PB12", "PB13", "PB14", "PB15"]
+# Pinos das 8 colunas conforme sua tabela
+col_pins = ["PA10", "PB3", "PB4", "PB5", "PB6", "PB7", "PB8", "PB9"]
+# Direção padrão col2row (ajuste se seus diodos estiverem invertidos)
+row2col = false 
 
-[vial]
-enabled = true # Ativa o suporte ao Vial para configuração em tempo real
+[layout]
+rows = 17
+cols = 8
+layers = 2
+keymap = [
+    [
+        # PA0
+        ["Up", "Left", "_", "_", "_", "End", "Home", "_"],
+        # PA1
+        ["_", "Down", "_", "_", "_", "F11", "Delete", "_"],
+        # PA2
+        ["_", "Right", "_", "_", "_", "F12", "PrintScreen", "_"],
+        # PA4
+        ["_", "_", "Dot", "L", "O", "Key9", "F8", "F7"],
+        # PA5
+        ["Tilde", "Semicolon", "RightBrace", "Ccidilla", "P", "Key0", "Minus", "Grave"],
+        # PA6
+        ["F6", "Slash", "Comma", "K", "I", "Key8", "Equal", "LeftBrace"],
+        # PA7
+        ["H", "N", "M", "J", "U", "Key7", "Key6", "Y"],
+        # PA8
+        ["_", "_", "_", "PageDown", "PageUp", "LGui", "_", "_"],
+        # PA9
+        ["_", "_", "_", "MO(1)", "_", "_", "_", "ContextMenu"],
+        # PB0
+        ["F5", "Space", "Enter", "_", "_", "F10", "F9", "Backspace"],
+        # PB1
+        ["G", "B", "V", "F", "R", "Key4", "Key5", "T"],
+        # PB10
+        ["F4", "_", "C", "D", "E", "Key3", "F2", "F3"],
+        # PB11
+        ["Backslash", "_", "X", "S", "W", "Key2", "F1", "CapsLock"],
+        # PB12
+        ["Escape", "MediaMute", "Z", "A", "Q", "Key1", "Apostrophe", "Tab"],
+        # PB13
+        ["LAlt", "RAlt", "_", "_", "_", "Insert", "_", "_"],
+        # PB14
+        ["_", "_", "RShift", "_", "_", "_", "_", "LShift"],
+        # PB15
+        ["_", "_", "_", "_", "_", "_", "LCtrl", "_"]
+    ],
+    [
+        # Camada 1 (Layer 1) - Exemplo de preenchimento para as teclas vazias
+        ["_", "_", "_", "_", "_", "_", "_", "_"],
+        ["_", "_", "_", "_", "_", "_", "_", "_"],
+        ["_", "_", "_", "_", "_", "_", "_", "_"],
+        ["_", "_", "_", "_", "_", "_", "_", "_"],
+        ["_", "_", "_", "_", "_", "_", "_", "_"],
+        ["_", "_", "_", "_", "_", "_", "_", "_"],
+        ["_", "_", "_", "_", "_", "_", "_", "_"],
+        ["_", "_", "_", "_", "_", "_", "_", "_"],
+        ["_", "_", "_", "_", "_", "_", "_", "_"],
+        ["_", "_", "_", "_", "_", "_", "_", "_"],
+        ["_", "_", "_", "_", "_", "_", "_", "_"],
+        ["_", "_", "_", "_", "_", "_", "_", "_"],
+        ["_", "_", "_", "_", "_", "_", "_", "_"],
+        ["_", "_", "_", "_", "_", "_", "_", "_"],
+        ["_", "_", "_", "_", "_", "_", "_", "_"],
+        ["_", "_", "_", "_", "_", "_", "_", "_"],
+        ["_", "_", "_", "_", "_", "_", "_", "_"]
+    ]
+]
