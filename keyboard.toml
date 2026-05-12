@@ -4,6 +4,7 @@ product_name = "Luciano Custom Keyboard"
 vendor_id = 0xFEED
 product_id = 0x0001
 manufacturer = "Luciano"
+chip = "stm32f103c8" # Define o hardware alvo
 
 [matrix]
 # Listagem das 15 linhas conforme sua tabela
